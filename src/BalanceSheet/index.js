@@ -12,7 +12,7 @@ const BalanceSheet = () => {
   const [totalsState, setTotalsState] = useState()
 
   // let's just pretend this is a real API
-  const api_url = 'https://sleepy-scrubland-70552.herokuapp.com/'
+  const api_url = process.env.API_URL || 'http://localhost:5000/'
 
   useEffect(() => {
     const getRecords = () => {
@@ -47,7 +47,7 @@ const BalanceSheet = () => {
     event.preventDefault()
     const original = recordsState.find(entry => entry._id === id)
     axios
-      .put(`${api_url}/${id}`, entry)
+      .put(`${api_url}${id}`, entry)
       .then(res => {
         console.log(res.data)
         const copyRecords = [...recordsState]
@@ -68,7 +68,7 @@ const BalanceSheet = () => {
     )
     if (verifyDelete) {
       axios
-        .delete(`${api_url}/${id}`)
+        .delete(`${api_url}${id}`)
         .then(res => {
           setRecordsState(recordsState.filter(entry => entry._id !== id))
           setTotalsState(res.data.totals)

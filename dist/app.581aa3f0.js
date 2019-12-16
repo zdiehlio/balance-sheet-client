@@ -33803,7 +33803,7 @@ var BalanceSheet = function BalanceSheet() {
       setTotalsState = _useState6[1]; // let's just pretend this is a real API
 
 
-  var api_url = 'https://sleepy-scrubland-70552.herokuapp.com/';
+  var api_url = undefined || 'http://localhost:5000/';
   (0, _react.useEffect)(function () {
     var getRecords = function getRecords() {
       return _axios.default.get(api_url).then(function (res) {
@@ -33841,7 +33841,7 @@ var BalanceSheet = function BalanceSheet() {
       return entry._id === id;
     });
 
-    _axios.default.put("".concat(api_url, "/").concat(id), entry).then(function (res) {
+    _axios.default.put("".concat(api_url).concat(id), entry).then(function (res) {
       console.log(res.data);
 
       var copyRecords = _toConsumableArray(recordsState);
@@ -33866,7 +33866,7 @@ var BalanceSheet = function BalanceSheet() {
     var verifyDelete = window.confirm('Are you sure you want to delete this entry?');
 
     if (verifyDelete) {
-      _axios.default.delete("".concat(api_url, "/").concat(id)).then(function (res) {
+      _axios.default.delete("".concat(api_url).concat(id)).then(function (res) {
         setRecordsState(recordsState.filter(function (entry) {
           return entry._id !== id;
         }));
@@ -33942,7 +33942,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49673" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50023" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
