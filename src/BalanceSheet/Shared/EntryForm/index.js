@@ -23,17 +23,6 @@ const EntryForm = ({ handleSubmit, type, handleCancel, entry = {} }) => {
       }}
       className='table-row'
     >
-      <select
-        required
-        onChange={() => setTypeState(event.target.value)}
-        value={typeState}
-        name='type'
-        className='form-input'
-      >
-        <option></option>
-        <option>Asset</option>
-        <option>Liability</option>
-      </select>
       <input
         required
         onChange={() => setNameState(event.target.value)}
@@ -42,6 +31,19 @@ const EntryForm = ({ handleSubmit, type, handleCancel, entry = {} }) => {
         placeholder='name'
         className='form-input'
       />
+      <select
+        required
+        onChange={() => setTypeState(event.target.value)}
+        value={typeState}
+        name='type'
+        className='form-input'
+      >
+        <option value='' disabled>
+          Asset/Liability
+        </option>
+        <option>Asset</option>
+        <option>Liability</option>
+      </select>
       <input
         required
         onChange={() => setBalanceState(event.target.value)}
