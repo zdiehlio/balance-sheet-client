@@ -33803,7 +33803,7 @@ var BalanceSheet = function BalanceSheet() {
       setTotalsState = _useState6[1]; // let's just pretend this is a real API
 
 
-  var api_url = 'http://localhost:5000';
+  var api_url = 'https://sleepy-scrubland-70552.herokuapp.com/';
   (0, _react.useEffect)(function () {
     var getRecords = function getRecords() {
       return _axios.default.get(api_url).then(function (res) {
@@ -33942,7 +33942,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54849" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49673" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

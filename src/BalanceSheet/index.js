@@ -12,7 +12,7 @@ const BalanceSheet = () => {
   const [totalsState, setTotalsState] = useState()
 
   // let's just pretend this is a real API
-  const api_url = 'http://localhost:5000'
+  const api_url = 'https://sleepy-scrubland-70552.herokuapp.com/'
 
   useEffect(() => {
     const getRecords = () => {
