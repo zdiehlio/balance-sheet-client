@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/BalanceSheet/Totals/index.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA","file":"Totals.3aef8fe4.css","sourceRoot":"../public","sourcesContent":[".totals span {\n  padding: 20px;\n}\n"]}
